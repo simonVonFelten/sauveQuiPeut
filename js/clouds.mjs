@@ -3,9 +3,11 @@ let maxHeight = 50;
 let cloudsElement = document.getElementById("clouds");
 let srcImg = "./images/cloud.png";
 let srcAvion = "./images/avion.png";
+let srcAvionEn = "./images/avionEn.png";
 
 let widthWindow = window.innerWidth;
 let hasPlane=false;
+
 
 class Cloud {
 
@@ -43,7 +45,7 @@ export function initClouds(){
 
 }
 
-export function moveCloud(moved,position) {
+export function moveCloud(moved,position,langFr) {
     clouds.forEach(cloud => cloud.move(moved));
 
     let rand = Math.floor(Math.random() * 20);
@@ -72,7 +74,11 @@ export function moveCloud(moved,position) {
         hasPlane=true;
         console.log("queen!");
         let element = document.createElement('img');
-        element.src=srcAvion;
+        if(langFr){
+            element.src=srcAvion;
+        }else{
+            element.src=srcAvionEn;
+        }
         element.alt="avion";
         element.style.position="absolute";
         element.style.top=Math.floor(Math.random()*maxHeight)+"px";

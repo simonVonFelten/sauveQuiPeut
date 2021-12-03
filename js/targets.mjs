@@ -60,6 +60,10 @@ class Target {
 let targets = [];
 let targetsVerify = [];
 
+export function getNbTargets(){
+    return targetsVerify.length;
+}
+
 export function initTargets(nbTargets){
 
     for(let i=0;i<nbTargets;i++){
