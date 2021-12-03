@@ -12,6 +12,7 @@ class Cloud {
         this.y =y;
         this.element = document.createElement('img');
         this.element.src=srcImg;
+        this.element.alt="nuage";
         this.element.style.left=this.x+"px";
         this.element.style.top=this.y+"px";
         this.element.style.position="absolute";

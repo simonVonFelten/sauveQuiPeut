@@ -11,6 +11,7 @@ class Target {
         this.x =x;
         this.element = document.createElement('img');
         this.element.src=srcImg;
+        this.element.alt="naufragés";
         this.element.style.left=this.x+"px";
         this.element.style.position="absolute";
         this.element.classList.add("target");

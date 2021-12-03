@@ -22,6 +22,7 @@ function sleep(ms) {
 export async  function throwFilet(force){
     let element = document.createElement('img');
     element.src="./images/filet.png";
+    element.alt="filet";
     element.id="filet";
     boat.appendChild(element);
     element.classList.add("scale");
