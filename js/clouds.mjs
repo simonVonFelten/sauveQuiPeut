@@ -2,8 +2,10 @@ let maxWidth =2000;
 let maxHeight = 50;
 let cloudsElement = document.getElementById("clouds");
 let srcImg = "./images/cloud.png";
+let srcAvion = "./images/avion.png";
 
 let widthWindow = window.innerWidth;
+let hasPlane=false;
 
 class Cloud {
 
@@ -64,5 +66,26 @@ export function moveCloud(moved,position) {
             }
 
         }
+    }
+
+    if(Math.floor(Math.random()*200)==1 && !hasPlane){
+        hasPlane=true;
+        console.log("queen!");
+        let element = document.createElement('img');
+        element.src=srcAvion;
+        element.alt="avion";
+        element.style.position="absolute";
+        element.style.top=Math.floor(Math.random()*maxHeight)+"px";
+        element.style.left=widthWindow+500+"px";
+        cloudsElement.appendChild(element);
+        element.classList.add("transitionLeftLong");
+        setTimeout(()=>{
+            element.style.left="-1000px";
+        },10);
+        setTimeout(()=>{
+            hasPlane=false;
+        },20000);
+
+
     }
 }

@@ -1,5 +1,5 @@
-let maxWidth = 3000;
-let minWidth = -3000;
+let maxWidth = 5000;
+let minWidth = -5000;
 let sea = document.getElementById("sea");
 let srcImg = "./images/target.png";
 let srcImgBaguette = "./images/baguette.png";
@@ -64,7 +64,7 @@ export function initTargets(nbTargets){
 
     for(let i=0;i<nbTargets;i++){
         let t = new Target( Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth));
-        if(Math.floor(Math.random()*20)==1){
+        if(Math.floor(Math.random()*10)==1){
             t = new Target( Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth),true);
         }
         t.display()
@@ -89,6 +89,9 @@ export function moveTarget(moved,position,isShooted=true) {
             }
         }
     }
+    if(targetsVerify.length==0){
+        alert("Plus aucun Naufragé n'est a sauver!");
+    }
     return shooted;
 
 }
@@ -110,6 +113,9 @@ export function isTargetPos (positionFilet,position,isRight){
                 sea.removeChild(toMove);
             },2000)
         }
+    }
+    if(targetsVerify.length==0){
+        alert("Plus aucun Naufragé n'est a sauver!");
     }
     return count;
 }

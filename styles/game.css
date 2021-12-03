@@ -31,6 +31,10 @@
     transition: left 2s ease 0s;
 }
 
+.transitionLeftLong{
+    transition: left 15s ease 0s;
+}
+
 .transitionBottom{
     transition: bottom 2s ease 0s;
 }
